@@ -1,0 +1,116 @@
+import java.util.Scanner;
+
+class juomaAutomaatti {
+
+	// Luodaan kapsoloidut tietorakenteet int teetä, int kahvia ja int kaakaota
+	private int teetä;
+	private int kahvia;
+	private int kaakaota;
+	
+	//Luodaan kontruktori, asetetaan oletusarvoksi 50
+	public juomaAutomaatti() {
+		teetä = 50;
+		kahvia = 50;
+		kaakaota = 50;
+	}
+	
+	// Päästään käsiksi kapseloituihin rakenteisiin getterien avulla
+	public int getTeetä() {
+		return this.teetä;
+	}
+	
+	public int getKahvia() {
+		return this.kahvia; 
+	}
+	
+	public int getKaakaota() {
+		return this.kaakaota;
+	}
+	
+	/* Luodaan tehtävänannossa mainitut metodit. Joka kerta kuin juomaa tilataan vähennetään sen määrästä 10. 
+	 * If else rakenteen avulla estetään juoman tilaaminen, jos sitä on jäljellä 0 tai vähemmän */	
+	
+	public void keitaTee() {
+		if (teetä > 0) { 
+			System.out.println("Odota hetki teetä valmistetaan.");
+			this.teetä -=10;
+			System.out.println("Teetä jäljellä: " +teetä+ " yksikköä. Kahvia jäljellä: " +kahvia+ " yksikköä. Kaakaota jäljellä: " +kaakaota+ " yksikköä.");
+		} else {
+			System.out.println("Teetä ei enää ole jäljellä. Täytä säiliö.");
+		}
+	}
+	
+	public void keitaKahvi() {
+		if (kahvia > 0) {
+			System.out.println("Odota hetki kahvia valmistetaan.");
+			this.kahvia -= 10;
+			System.out.println("Teetä jäljellä: " +teetä+ " yksikköä. Kahvia jäljellä: " +kahvia+ " yksikköä. Kaakaota jäljellä: " +kaakaota+ " yksikköä.");
+		} else {
+			System.out.println("Kahvia ei enää ole jäljellä. Täytä säiliö.");
+		}
+	}
+	
+	public void keitaKaakao() {
+		if (kaakaota > 0) {
+			System.out.println("Odota hetki kaakaota valmistetaan.");
+			this.kaakaota -= 10;
+			System.out.println("Teetä jäljellä: " +teetä+ " yksikköä. Kahvia jäljellä: " +kahvia+ " yksikköä. Kaakaota jäljellä: " +kaakaota+ " yksikköä.");
+		} else {
+			System.out.println("Kaakaota ei enää ole jäljellä. Täytä säiliö.");
+		}
+	}
+	
+	//Tehdään boonus tehtävän onnistuuko()-metodi ja getteri sille
+	
+	public boolean onnistuuko() {
+		int luku = (int)(Math.random() * 100+1);
+		
+		if (luku <= 25) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	public boolean getOnnistuuko() {
+		return this.onnistuuko();
+	}
+		
+	public static void main(String[] args) {
+		
+		juomaAutomaatti omakone = new juomaAutomaatti();
+		Scanner lukija = new Scanner(System.in);
+		int valinta;
+		
+		//Tehdään valikko ja do-while silmukkarakenne sille
+		do {
+			// Luodaan tehtävänannon mukainen muotoilu
+			System.out.println("*******Juoma-Automaatti******* \n");
+			System.out.println(" 1. Tee \n 2. Kahvi \n 3. Kaakao \n 4. Lopeta \n");
+			System.out.println("******************************");
+			valinta = lukija.nextInt();
+			
+			if (valinta == 1) {
+				if (omakone.getOnnistuuko() == true) {
+					omakone.keitaTee();
+				} else {
+					System.out.println("Ei onnistu, kiitos maksustasi.");
+				}
+			} else if (valinta == 2) {
+				if (omakone.getOnnistuuko() == true) {
+					omakone.keitaKahvi();
+				} else {
+					System.out.println("Ei onnistu, kiitos maksustasi.");
+				}
+			} else if (valinta == 3) {
+				if (omakone.getOnnistuuko() == true) {
+					omakone.keitaKaakao();
+				} else {
+					System.out.println("Ei onnistu, kiitos maksustasi.");
+				}
+			} else {
+				break;
+			}
+		}while (valinta == 1 || valinta == 2 || valinta == 3);	
+	}
+}
