@@ -2,21 +2,21 @@ import java.util.Scanner;
 
 class juomaAutomaatti {
 
-	// Luodaan kapsoloidut tietorakenteet int teet‰, int kahvia ja int kaakaota
-	private int teet‰;
+	// Luodaan kapsoloidut tietorakenteet int teet√§, int kahvia ja int kaakaota
+	private int teet√§;
 	private int kahvia;
 	private int kaakaota;
 	
 	//Luodaan kontruktori, asetetaan oletusarvoksi 50
 	public juomaAutomaatti() {
-		teet‰ = 50;
+		teet√§ = 50;
 		kahvia = 50;
 		kaakaota = 50;
 	}
 	
-	// P‰‰st‰‰n k‰siksi kapseloituihin rakenteisiin getterien avulla
-	public int getTeet‰() {
-		return this.teet‰;
+	// P√§√§st√§√§n k√§siksi kapseloituihin rakenteisiin getterien avulla
+	public int getTeet√§() {
+		return this.teet√§;
 	}
 	
 	public int getKahvia() {
@@ -27,16 +27,16 @@ class juomaAutomaatti {
 		return this.kaakaota;
 	}
 	
-	/* Luodaan teht‰v‰nannossa mainitut metodit. Joka kerta kuin juomaa tilataan v‰hennet‰‰n sen m‰‰r‰st‰ 10. 
-	 * If else rakenteen avulla estet‰‰n juoman tilaaminen, jos sit‰ on j‰ljell‰ 0 tai v‰hemm‰n */	
+	/* Luodaan teht√§v√§nannossa mainitut metodit. Joka kerta kuin juomaa tilataan v√§hennet√§√§n sen m√§√§r√§st√§ 10. 
+	 * If else rakenteen avulla estet√§√§n juoman tilaaminen, jos sit√§ on j√§ljell√§ 0 tai v√§hemm√§n */	
 	
 	public void keitaTee() {
-		if (teet‰ > 0) { 
-			System.out.println("Odota hetki teet‰ valmistetaan.");
-			this.teet‰ -=10;
-			System.out.println("Teet‰ j‰ljell‰: " +teet‰+ " yksikkˆ‰. Kahvia j‰ljell‰: " +kahvia+ " yksikkˆ‰. Kaakaota j‰ljell‰: " +kaakaota+ " yksikkˆ‰.");
+		if (teet√§ > 0) { 
+			System.out.println("Odota hetki teet√§ valmistetaan.");
+			this.teet√§ -=10;
+			System.out.println("Teet√§ j√§ljell√§: " +teet√§+ " yksikk√∂√§. Kahvia j√§ljell√§: " +kahvia+ " yksikk√∂√§. Kaakaota j√§ljell√§: " +kaakaota+ " yksikk√∂√§.");
 		} else {
-			System.out.println("Teet‰ ei en‰‰ ole j‰ljell‰. T‰yt‰ s‰iliˆ.");
+			System.out.println("Teet√§ ei en√§√§ ole j√§ljell√§. T√§yt√§ s√§ili√∂.");
 		}
 	}
 	
@@ -44,9 +44,9 @@ class juomaAutomaatti {
 		if (kahvia > 0) {
 			System.out.println("Odota hetki kahvia valmistetaan.");
 			this.kahvia -= 10;
-			System.out.println("Teet‰ j‰ljell‰: " +teet‰+ " yksikkˆ‰. Kahvia j‰ljell‰: " +kahvia+ " yksikkˆ‰. Kaakaota j‰ljell‰: " +kaakaota+ " yksikkˆ‰.");
+			System.out.println("Teet√§ j√§ljell√§: " +teet√§+ " yksikk√∂√§. Kahvia j√§ljell√§: " +kahvia+ " yksikk√∂√§. Kaakaota j√§ljell√§: " +kaakaota+ " yksikk√∂√§.");
 		} else {
-			System.out.println("Kahvia ei en‰‰ ole j‰ljell‰. T‰yt‰ s‰iliˆ.");
+			System.out.println("Kahvia ei en√§√§ ole j√§ljell√§. T√§yt√§ s√§ili√∂.");
 		}
 	}
 	
@@ -54,13 +54,13 @@ class juomaAutomaatti {
 		if (kaakaota > 0) {
 			System.out.println("Odota hetki kaakaota valmistetaan.");
 			this.kaakaota -= 10;
-			System.out.println("Teet‰ j‰ljell‰: " +teet‰+ " yksikkˆ‰. Kahvia j‰ljell‰: " +kahvia+ " yksikkˆ‰. Kaakaota j‰ljell‰: " +kaakaota+ " yksikkˆ‰.");
+			System.out.println("Teet√§ j√§ljell√§: " +teet√§+ " yksikk√∂√§. Kahvia j√§ljell√§: " +kahvia+ " yksikk√∂√§. Kaakaota j√§ljell√§: " +kaakaota+ " yksikk√∂√§.");
 		} else {
-			System.out.println("Kaakaota ei en‰‰ ole j‰ljell‰. T‰yt‰ s‰iliˆ.");
+			System.out.println("Kaakaota ei en√§√§ ole j√§ljell√§. T√§yt√§ s√§ili√∂.");
 		}
 	}
 	
-	//Tehd‰‰n boonus teht‰v‰n onnistuuko()-metodi ja getteri sille
+	//Tehd√§√§n boonus teht√§v√§n onnistuuko()-metodi ja getteri sille
 	
 	public boolean onnistuuko() {
 		int luku = (int)(Math.random() * 100+1);
@@ -82,9 +82,9 @@ class juomaAutomaatti {
 		Scanner lukija = new Scanner(System.in);
 		int valinta;
 		
-		//Tehd‰‰n valikko ja do-while silmukkarakenne sille
+		//Tehd√§√§n valikko ja do-while silmukkarakenne sille
 		do {
-			// Luodaan teht‰v‰nannon mukainen muotoilu
+			// Luodaan teht√§v√§nannon mukainen muotoilu
 			System.out.println("*******Juoma-Automaatti******* \n");
 			System.out.println(" 1. Tee \n 2. Kahvi \n 3. Kaakao \n 4. Lopeta \n");
 			System.out.println("******************************");
@@ -96,7 +96,7 @@ class juomaAutomaatti {
 				} else {
 					System.out.println("Ei onnistu, kiitos maksustasi.");
 				}
-			} else if (valinta == 2) {
+			} else if (valinta == 2) { // Hyv√§!
 				if (omakone.getOnnistuuko() == true) {
 					omakone.keitaKahvi();
 				} else {
